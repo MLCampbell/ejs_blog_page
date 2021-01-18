@@ -4,14 +4,14 @@ const ejs = require("ejs");
 const _ = require('lodash');
 const truncate = require('truncate-html');
 
-const homeStartingContent = "Starting content, Lacus vel facilisis volutpat est velit egestas dui id ornare. Semper auctor neque vitae tempus quam. Sit amet cursus sit amet dictum sit amet justo. Viverra tellus in hac habitasse. Imperdiet proin fermentum leo vel orci porta. Donec ultrices tincidunt arcu non sodales neque sodales ut. Mattis molestie a iaculis at erat pellentesque adipiscing. Magnis dis parturient montes nascetur ridiculus mus mauris vitae ultricies. Adipiscing elit ut aliquam purus sit amet luctus venenatis lectus. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Odio euismod lacinia at quis risus sed vulputate odio ut. Cursus mattis molestie a iaculis at erat pellentesque adipiscing.";
+const homeStartingContent = "My name is Marcus Powdrell Campbell and by the time someone is able to read this, I'll be confident enough to call myself a developer. Despite coding for years, it's taken a huge amount of time to get to this stage. It's now time for a big push. There are 348 days in 2021 as of the time of writing, 18th January 2021. My commitment: In the next 348  days I'll be ready for my first developer role. I've never really been one for blogging or diary writing but tracking my progress each and every day of coding on my own blog page does seem like a good idea (emphasis on seem). So, time to code. I'm thinking ES6 and beyond, jQuery, React and Node should be my focus, in that order. HTML and CSS knowledge need some touching up but, mostly, it's all focus on everything JS. I reckon this should do it. JavaScript is good fun. I should probably get to grips with at least one database. I like the look of MongoDB. Perhaps stick with that? Writing this feels incredibly self-indulgent and I'm not really a fan. I suppose that explains my aversion to blogs and diaries. There's an irony buried in here somewhere.";
 const aboutContent = "Hac habitasse platea dictumst vestibulum rhoncus est pellentesque. Dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Non diam phasellus vestibulum lorem sed. Platea dictumst quisque sagittis purus sit. Egestas sed sed risus pretium quam vulputate dignissim suspendisse. Mauris in aliquam sem fringilla. Semper risus in hendrerit gravida rutrum quisque non tellus orci. Amet massa vitae tortor condimentum lacinia quis vel eros. Enim ut tellus elementum sagittis vitae. Mauris ultrices eros in cursus turpis massa tincidunt dui.";
 const contactContent = "Scelerisque eleifend donec pretium vulputate sapien. Rhoncus urna neque viverra justo nec ultrices. Arcu dui vivamus arcu felis bibendum. Consectetur adipiscing elit duis tristique. Risus viverra adipiscing at in tellus integer feugiat. Sapien nec sagittis aliquam malesuada bibendum arcu vitae. Consequat interdum varius sit amet mattis. Iaculis nunc sed augue lacus. Interdum posuere lorem ipsum dolor sit amet consectetur adipiscing elit. Pulvinar elementum integer enim neque. Ultrices gravida dictum fusce ut placerat orci nulla. Mauris in aliquam sem fringilla ut morbi tincidunt. Tortor posuere ac ut consequat semper viverra nam libero.";
 
 const app = express();
 
-function truncateString (str, num) {
-  if(str.length <= num) {
+function truncateString(str, num) {
+  if (str.length <= num) {
     return str
   } else {
     return str.slice(0, num) + '...'
@@ -46,7 +46,8 @@ app.post('/compose', function (req, res) {
   const body = req.body;
   const post = {
     title: body.postTitle,
-    content: body.postContent}
+    content: body.postContent
+  }
 
   posts.push(post);
 
